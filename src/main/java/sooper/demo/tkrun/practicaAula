@@ -1,0 +1,21 @@
+
+Implementa en la ventana principal del Supermercado la siguiente funcionalidad:
+
+Introduce un numero de pedido valido (1) para que, al hacer click en el boton añadir pedido, me muestre en la tabla
+los articulos relacionados a ese pedido.
+
+1. Desarrolla una funcionalidad asociada al botón embolsar, para que, cuando seleccione una fila de la tabla superior realice lo siguiente:
+
+Guarde en el campo "embolsado" del articulo seleccionado el valor entero 1
+
+Muestre en la tabla de abajo el registro seleccionado, con el id de articulo correspondiente y en el campo contenedor
+muestre el valor entero 999
+
+2. Modifica la base de datos para que:
+	a. en la tabla articuloPedido se almacene información acerca del contenedor asignado a ese articulo
+	b. en la tabla contenedor, se almacene información acerca de la capacidad libre de ese contenedor (tendrá un valor 
+	entero que tendrás que añadir como nuevo campo en la tabla contenedor)
+
+3. Modifica la funcionalidad que has creado en el punto 1 para que:
+	a. Al embolsar un articulo, seleccione el contenedor que tenga espacio libre suficiente para albergar ese articulo
+	b. Se modifique el espacio libre de ese contenedor para añadir el volumen que ocupa ese articulo
