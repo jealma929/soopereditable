@@ -82,9 +82,11 @@ public class SupermercadoController {
 		//calculamos el volumen total aproximado del pedido
 		int contenedor;
 		int i;
+		int j;
+		
 		
 		//usamos una tabla para pasar los datos de la consulta
-		DefaultTableModel modelovolumen = new DefaultTableModel(new Object[][] {
+		/*DefaultTableModel modelovolumen = new DefaultTableModel(new Object[][] {
 		},
 		new String[] {
 				"idPedido", "Volumen";
@@ -100,7 +102,7 @@ public class SupermercadoController {
 			
 		lista.
 			total=total + Integer.parseInt(lista.get(j).toString());
-		}
+		}*/
 		
 		for (j=0; j<lista.size();j++) {
 			view.rellenaListaArticulos(lista.get(j));	
