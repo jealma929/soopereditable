@@ -29,10 +29,10 @@ public class SupermercadoModel {
 		db.executeUpdate(sql, 1, idArticulo);
 	}
 
-	public List<Object[]> volumenTotal(int i) {
+	public List<Object[]> totalArticulos(int i) {
 		// TODO Auto-generated method stub
 		List<Object[]> lista =null;
-		String sql ="SELECT VOLUMEN, IDCONTENEDOR FROM ARTICULOPEDIDO WHERE IDPEDIDO = (SELECT IDPEDIDO FROM ARTICULOPEDIDO WHERE IDARTICULO= ?";
+		String sql ="SELECT IDARTICULO, VOLUMEN, IDCONTENEDOR FROM ARTICULOPEDIDO WHERE IDPEDIDO = (SELECT IDPEDIDO FROM ARTICULOPEDIDO WHERE IDARTICULO= ?)";
 		lista = db.executeQueryArray(sql, i);
 		return lista;
 	}

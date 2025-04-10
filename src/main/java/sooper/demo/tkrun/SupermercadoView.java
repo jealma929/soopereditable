@@ -16,7 +16,7 @@ import javax.swing.JLabel;
 public class SupermercadoView {
 
 	protected JFrame frmSupermercado;
-	private JTextField textField;
+	JTextField textField;
 	JTable table;
 	private JButton btnEmbolsar;
 	private JScrollPane scrollPane_1;
@@ -146,6 +146,11 @@ public void rellenaListaArticulos(Object[] rowArticulo) {
 	public DefaultTableModel getModeloArticulo() {
 		// TODO Auto-generated method stub
 		return this.modeloArticulo;
+	}
+
+	public void escribirPrueba(String suma) {
+		// TODO Auto-generated method stub
+		textField.setText(suma);
 	}
 
 	

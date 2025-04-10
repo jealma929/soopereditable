@@ -11,7 +11,7 @@ public class SupermercadoController {
 
 	private SupermercadoModel model;
 	private SupermercadoView view;
-	private Jtable
+	
 	
 		
 	public void setVistaModel( SupermercadoView v , SupermercadoModel m) {
@@ -32,10 +32,8 @@ public class SupermercadoController {
 		for (j=0; j<lista.size();j++) {
 			view.rellenaListaArticulos(lista.get(j));
 		}
-		
 	};
 	
-
 	public SupermercadoView getView() {
 		return view;
 	}
@@ -53,10 +51,11 @@ public class SupermercadoController {
 	}
 
 	public void embolsarArticulos() {
-		// TODO Auto-generated method stub
-		
+	
 		// modificamos la base de datos rellenando el campo a 1
 		String idArticulo;
+		int intArticulo;
+		
 		
 		idArticulo = this.view.getTable().getValueAt(this.view.getTable().getSelectedRow(),0).toString();
 			
@@ -73,49 +72,32 @@ public class SupermercadoController {
 				
 		this.view.getModeloListaEmbolsados().addRow(fila);
 		
-		//para sacar el numeo de fila
+		//eliminamos la linea seleccionada de la tabla superior 
 		int numeroFila = this.view.getModeloListaEmbolsados().getRowCount();
+		
+		
+		
 		//para asignar los valores a la primera fila de la tabla
 		this.view.getModeloListaEmbolsados().setValueAt(idArticulo, numeroFila-1, 0);
 		this.view.getModeloListaEmbolsados().setValueAt("999", numeroFila-1, 1 );
-		
-		//calculamos el volumen total aproximado del pedido
-		int contenedor;
-		int i;
-		int j;
-		
-		
-		//usamos una tabla para pasar los datos de la consulta
-		/*DefaultTableModel modelovolumen = new DefaultTableModel(new Object[][] {
-		},
-		new String[] {
-				"idPedido", "Volumen";
-			}
-		);
-		
-		List<Object[]>lista=null;
-		lista=this.model.volumenTotal(Integer.parseInt(idArticulo));
-		
-		for (i=0; i<lista.size();i++) {
-		}
-			contenedor=lista.get(i);
-			
-		lista.
-			total=total + Integer.parseInt(lista.get(j).toString());
-		}*/
-		
-		for (j=0; j<lista.size();j++) {
-			view.rellenaListaArticulos(lista.get(j));	
-		
-			this.modeloArticulo.addRow(rowArticulo);//para añadir una fila a la tabla lo primero que tengo que añadir es la 
-													//fila al modelo correspondiente a esa tabla
-			this.table.setModel(modeloArticulo); 	//una vez la tenga añadida al modelo, muestro el modelo en la tabla
 
-		
-				
-		/*public void rellenaTablaEmbolsados() {
-				}*/
+		intArticulo= Integer.parseInt(idArticulo);
+		contenedor(intArticulo);
+	}
+	
+	public void contenedor(int articulo) {
+		String suma ="";
+		List<Object[]> lista = new ArrayList<>();
+		lista=this.model.totalArticulos(articulo);
+		int m=lista.size();
+		String[][] ArrayPedido = new String[m][3];
+		for (int i=1;i<m;i++) {
+			String fila = lista.get(i).toString();
+			suma = suma+fila;
+			//ArrayPedido[i] = lista.get(i).toString();
+			
+		}
+		this.view.escribirPrueba(suma);
 	}
 
 }
-
