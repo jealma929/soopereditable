@@ -1,0 +1,42 @@
+java
+import java.util.ArrayList;
+import java.util.List;
+
+class MiObjeto {
+    private String componente1;
+    private int componente2;
+
+    public MiObjeto(String componente1, int componente2) {
+        this.componente1 = componente1;
+        this.componente2 = componente2;
+    }
+
+    public String getComponente1() {
+        return componente1;
+    }
+
+    public int getComponente2() {
+        return componente2;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MiObjeto objeto = new MiObjeto("Hola", 42);
+        List componentes = new ArrayList<>();
+
+        // Agregar componentes a la lista
+        componentes.add(objeto.getComponente1());
+        componentes.add(objeto.getComponente2());
+
+        // Mostrar los componentes
+        System.out.println(componentes);
+    }
+}
+
+
+En este ejemplo, creamos un objeto 
+MiObjeto
+ con dos componentes. Luego, los extraemos y los guardamos en una lista llamada 
+componentes
+. Finalmente, imprimimos la lista.
