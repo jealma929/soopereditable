@@ -8,9 +8,18 @@ public class ArticuloEmbolsar {
 		private int embolsado;
 		private int idContenedor;
 		
-		public ArticuloEmbolsar =
-		public Object articuloEmbolsar (int idArticulo, int idPedido, int volumen, int embolsado, int idContenedor) {
+		public ArticuloEmbolsar () {
 			
+		};
+		
+		
+		public ArticuloEmbolsar (int idArticulo, int idPedido, int volumen, int embolsado, int idContenedor) {
+		
+			this.idArticulo=idArticulo;
+			this.idPedido=idPedido;
+			this.volumen=volumen;
+			this.embolsado=embolsado;
+			this.idContenedor=idContenedor;
 		}
 		public int getIdArticulo(){
 			return idArticulo;
@@ -43,5 +52,6 @@ public class ArticuloEmbolsar {
 		public void setIdContenedor(int c) {
 			idContenedor=c;
 		}
-
+		
 }
+		

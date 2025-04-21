@@ -148,9 +148,9 @@ public void rellenaListaArticulos(Object[] rowArticulo) {
 		return this.modeloArticulo;
 	}
 
-	public void escribirPrueba(String suma) {
+	public void escribirPrueba(String text) {
 		// TODO Auto-generated method stub
-		textField.setText(suma);
+		textField.setText(text);
 	}
 
 	

@@ -89,15 +89,16 @@ public class SupermercadoController {
 		String suma ="";
 		List<Object[]> lista = new ArrayList<>();
 		lista=this.model.totalArticulos(articulo);
-		int m=lista.size();
-		String[][] ArrayPedido = new String[m][3];
+		int m = lista.size();
+		String mm = Integer.toString(lista.size()); 
+		/*String[][] ArrayPedido = new String[m][3];
 		for (int i=1;i<m;i++) {
 			String fila = lista.get(i).toString();
 			suma = suma+fila;
 			//ArrayPedido[i] = lista.get(i).toString();
 			
-		}
-		this.view.escribirPrueba(suma);
+		}*/
+		this.view.escribirPrueba("3");
 	}
 
 }
